@@ -1,7 +1,9 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / '.env')
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
@@ -90,7 +92,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static_backend/'
+STATIC_ROOT = BASE_DIR / 'static_backend'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/var/www/kittygram/media'
